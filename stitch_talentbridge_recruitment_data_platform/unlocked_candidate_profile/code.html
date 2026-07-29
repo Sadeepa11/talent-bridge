@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background dark:bg-background" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Company Unlocked Profile - TalentBridge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#9bccf6",
+                      "on-tertiary-fixed-variant": "#005228",
+                      "surface-dim": "#d8dadc",
+                      "surface-container-highest": "#e0e3e5",
+                      "surface-container-high": "#e6e8ea",
+                      "on-primary-fixed-variant": "#0e4b6e",
+                      "surface-container-low": "#f2f4f6",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#72787f",
+                      "tertiary-fixed-dim": "#61de8a",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#00401e",
+                      "surface-container": "#eceef0",
+                      "primary-container": "#1a5276",
+                      "background": "#f7f9fb",
+                      "primary-fixed": "#cbe6ff",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#2d3133",
+                      "secondary-fixed": "#cce5ff",
+                      "secondary": "#006397",
+                      "on-tertiary-container": "#58d683",
+                      "on-error-container": "#93000a",
+                      "surface-tint": "#2f6388",
+                      "on-secondary-container": "#004d77",
+                      "secondary-container": "#71c0fe",
+                      "inverse-primary": "#9bccf6",
+                      "on-error": "#ffffff",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#92ccff",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed": "#001e30",
+                      "primary": "#003b5a",
+                      "surface-variant": "#e0e3e5",
+                      "surface-bright": "#f7f9fb",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-background": "#191c1e",
+                      "tertiary-container": "#005a2c",
+                      "on-surface-variant": "#41474e",
+                      "on-primary-container": "#94c5ee",
+                      "tertiary-fixed": "#7efba4",
+                      "on-secondary-fixed-variant": "#004b73",
+                      "outline-variant": "#c1c7cf",
+                      "on-secondary-fixed": "#001d31",
+                      "on-tertiary-fixed": "#00210c",
+                      "on-surface": "#191c1e",
+                      "surface": "#f7f9fb"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sidebar_width": "260px",
+                      "container-max": "1440px",
+                      "topbar_height": "64px",
+                      "gutter": "24px",
+                      "margin-desktop": "32px"
+              },
+              "fontFamily": {
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "code": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "code": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      }
+              }
+          },
+        }
+      </script>
+</head>
+<body class="h-full overflow-hidden text-on-surface flex bg-background">
+<!-- SideNavBar -->
+<nav class="w-[260px] h-full fixed left-0 top-0 border-r border-outline-variant bg-primary dark:bg-primary z-20 flex flex-col h-screen w-[sidebar_width] hidden md:flex">
+<div class="px-6 py-6 border-b border-surface-variant/10">
+<h1 class="font-headline-md text-headline-md font-bold text-surface-lowest">TalentBridge</h1>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim/70 mt-1">Recruitment Portal</p>
+</div>
+<div class="flex-1 overflow-y-auto py-4">
+<ul class="space-y-1 font-label-md text-label-md">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim/70 hover:bg-primary-container/10 hover:text-surface-lowest transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-surface-lowest border-l-4 border-secondary-container bg-primary-container/20 hover:bg-primary-container/10 hover:text-surface-lowest transition-colors opacity-90" href="#">
+<span class="material-symbols-outlined">group</span>
+                        Candidates
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim/70 hover:bg-primary-container/10 hover:text-surface-lowest transition-colors" href="#">
+<span class="material-symbols-outlined">folder_shared</span>
+                        Batches
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim/70 hover:bg-primary-container/10 hover:text-surface-lowest transition-colors" href="#">
+<span class="material-symbols-outlined">vpn_key</span>
+                        Access Grants
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim/70 hover:bg-primary-container/10 hover:text-surface-lowest transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                        Reports
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim/70 hover:bg-primary-container/10 hover:text-surface-lowest transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+                        Settings
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="h-[64px] fixed top-0 right-0 w-[calc(100%-260px)] border-b border-outline-variant shadow-sm bg-surface-lowest dark:bg-surface-container-lowest z-10 hidden md:flex justify-between items-center px-gutter max-w-[container-max] ml-sidebar_width">
+<div class="flex-1 flex items-center gap-4">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-bright border border-outline-variant rounded-DEFAULT font-body-md text-body-md text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-shadow" placeholder="Search candidates..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low transition-all rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant">
+<span class="font-body-md text-body-md text-primary dark:text-primary-fixed">Alex Thompson</span>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant flex items-center justify-center">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a recruitment specialist named Alex Thompson. The portrait is taken in a modern office with bright, soft light-mode lighting, evoking a sense of calm reliability. The subject wears corporate attire suitable for an HR director, against a subtle, clean background. 50 words." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWMPXFEe4ph1IPSmjyJ7YoH0aHOyH5q4RJWAaoWgnHmcKj17KrJcNMxdqn0Omrf_foOAbgyV0SBtcKU5gVK__cUkXBRNQwXfj67IbDXeCEbkcK8MJb2kFxJNob3mwybADpB-TRtpeviPXxNU7fWi9Y43px3F4BQX-LRtcpivnldvcfckSeHl3C_kcSi-4PnBKzfMzxMx1iHeec9c8AMkNzqePZU5__Vyjt52JOCkkIvuXpQv4aRd6e"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 h-screen overflow-y-auto ml-[260px] pt-[64px] bg-background">
+<div class="max-w-[container-max] mx-auto px-gutter py-margin-desktop">
+<!-- Banner -->
+<div class="w-full bg-tertiary-container/10 border border-tertiary-container/30 rounded-lg p-4 mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md text-tertiary uppercase tracking-wider">Full access granted</span>
+</div>
+<!-- Profile Container -->
+<div class="bg-surface-lowest border border-outline-variant border-l-4 border-l-tertiary rounded-lg shadow-sm overflow-hidden flex flex-col md:flex-row">
+<!-- Left Column (Profile Info) -->
+<div class="md:w-1/3 p-6 border-b md:border-b-0 md:border-r border-outline-variant flex flex-col gap-6 bg-surface-bright/50">
+<div class="flex flex-col items-center text-center">
+<div class="w-32 h-32 rounded-full overflow-hidden border-4 border-surface-lowest shadow-sm mb-4 bg-surface-variant">
+<img alt="Profile Photo" class="w-full h-full object-cover" data-alt="A high-quality, professional portrait photograph of an executive candidate. The image is brightly lit, adhering to a light-mode corporate aesthetic. The subject is dressed in formal business attire, looking directly at the camera with a confident, approachable expression. The background is a clean, out-of-focus modern office setting. 60 words." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyEkCxzomP3HF0I8k-aGgYYLtvhRcAalEkpxFAJLV2PSWLzczonDWWxhWmSHfx7mvxc3u2ZnyMKsw1_qSv3SaGFfr-lQFeTf-amrljSmrQ7_RVp0X0ZfGgvyR49hYCysByhdV-Co4UWG4FrrNaHPH2mmwbJk_5xNumquuriK1M3SjVzKa81VV3LVll4xoR9SZco2m-hL7eaPlVQH2Y3aQUmUT-YI-ClZhQ54Hj7daZiGjen5hiFhiX"/>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">Michael Reynolds</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Senior Software Engineer</p>
+</div>
+<div class="w-full h-px bg-outline-variant/50"></div>
+<div class="flex flex-col gap-4">
+<h3 class="font-label-md text-label-md text-on-surface uppercase text-on-surface-variant">Contact Information</h3>
+<div class="flex items-start justify-between group">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Email</span>
+<span class="font-body-md text-body-md text-primary font-medium">michael.reynolds@example.com</span>
+</div>
+<button class="text-outline hover:text-primary transition-colors opacity-0 group-hover:opacity-100 p-1" title="Copy Email">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<div class="flex items-start justify-between group">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Phone</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">+1 (555) 123-4567</span>
+</div>
+<button class="text-outline hover:text-primary transition-colors opacity-0 group-hover:opacity-100 p-1" title="Copy Phone">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<div class="flex items-start justify-between group">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Location</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">San Francisco, CA</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (Experience & Docs) -->
+<div class="md:w-2/3 p-6 flex flex-col gap-8 bg-surface-lowest">
+<!-- Experience -->
+<div>
+<div class="flex items-center gap-2 mb-4 pb-2 border-b border-outline-variant">
+<span class="material-symbols-outlined text-primary">work</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Experience</h3>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Job 1 -->
+<div class="p-4 border border-outline-variant rounded-lg bg-surface-bright hover:shadow-sm transition-shadow">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface text-[15px]">Lead Developer</h4>
+<p class="font-body-md text-body-md text-primary font-medium">WSO2</p>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant bg-surface-variant/50 px-2 py-1 rounded">2019 - Present</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                                    Led architecture and development for enterprise integration solutions. Managed a team of 8 engineers delivering scalable API gateways.
+                                </p>
+</div>
+<!-- Job 2 -->
+<div class="p-4 border border-outline-variant rounded-lg bg-surface-bright hover:shadow-sm transition-shadow">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface text-[15px]">Software Engineer</h4>
+<p class="font-body-md text-body-md text-primary font-medium">Dialog Axiata</p>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant bg-surface-variant/50 px-2 py-1 rounded">2015 - 2019</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                                    Developed high-throughput telecommunication billing systems using Java and Spring Boot. Improved query performance by 40%.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Qualifications -->
+<div>
+<div class="flex items-center gap-2 mb-4 pb-2 border-b border-outline-variant">
+<span class="material-symbols-outlined text-primary">school</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Qualifications</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 border border-outline-variant rounded-lg bg-surface-bright flex items-start gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">workspace_premium</span>
+<div>
+<h4 class="font-body-md text-body-md font-medium text-on-surface">BSc Computer Science</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Stanford University, 2015</p>
+</div>
+</div>
+<div class="p-4 border border-outline-variant rounded-lg bg-surface-bright flex items-start gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">workspace_premium</span>
+<div>
+<h4 class="font-body-md text-body-md font-medium text-on-surface">AWS Certified Solutions Architect</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Amazon Web Services, 2021</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Documents -->
+<div>
+<div class="flex items-center justify-between mb-4 pb-2 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">folder_open</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Documents</h3>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between p-3 border border-outline-variant rounded-lg bg-surface-bright group hover:border-secondary transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">picture_as_pdf</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Resume.pdf</span>
+</div>
+<button class="text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-3 border border-outline-variant rounded-lg bg-surface-bright group hover:border-secondary transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">folder_zip</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Certifications.zip</span>
+</div>
+<button class="text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+<div class="mt-4 flex items-start gap-2 text-error bg-error-container/20 p-3 rounded-lg border border-error-container/50">
+<span class="material-symbols-outlined text-[16px] mt-0.5">warning</span>
+<p class="font-body-sm text-body-sm">
+                                Downloads are watermarked with your company name and the download time.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

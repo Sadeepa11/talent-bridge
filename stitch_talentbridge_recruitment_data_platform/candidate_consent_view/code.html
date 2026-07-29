@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Candidate Consent Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#9bccf6",
+                      "on-tertiary-fixed-variant": "#005228",
+                      "surface-dim": "#d8dadc",
+                      "surface-container-highest": "#e0e3e5",
+                      "surface-container-high": "#e6e8ea",
+                      "on-primary-fixed-variant": "#0e4b6e",
+                      "surface-container-low": "#f2f4f6",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#72787f",
+                      "tertiary-fixed-dim": "#61de8a",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#00401e",
+                      "surface-container": "#eceef0",
+                      "primary-container": "#1a5276",
+                      "background": "#f7f9fb",
+                      "primary-fixed": "#cbe6ff",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#2d3133",
+                      "secondary-fixed": "#cce5ff",
+                      "secondary": "#006397",
+                      "on-tertiary-container": "#58d683",
+                      "on-error-container": "#93000a",
+                      "surface-tint": "#2f6388",
+                      "on-secondary-container": "#004d77",
+                      "secondary-container": "#71c0fe",
+                      "inverse-primary": "#9bccf6",
+                      "on-error": "#ffffff",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#92ccff",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed": "#001e30",
+                      "primary": "#003b5a",
+                      "surface-variant": "#e0e3e5",
+                      "surface-bright": "#f7f9fb",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-background": "#191c1e",
+                      "tertiary-container": "#005a2c",
+                      "on-surface-variant": "#41474e",
+                      "on-primary-container": "#94c5ee",
+                      "tertiary-fixed": "#7efba4",
+                      "on-secondary-fixed-variant": "#004b73",
+                      "outline-variant": "#c1c7cf",
+                      "on-secondary-fixed": "#001d31",
+                      "on-tertiary-fixed": "#00210c",
+                      "on-surface": "#191c1e",
+                      "surface": "#f7f9fb",
+                      "amber": { "500": "#f59e0b", "100": "#fef3c7", "800": "#92400e" },
+                      "green": { "500": "#22c55e", "100": "#dcfce7", "800": "#166534" }
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sidebar_width": "260px",
+                      "container-max": "1440px",
+                      "topbar_height": "64px",
+                      "gutter": "24px",
+                      "margin-desktop": "32px"
+              },
+              "fontFamily": {
+                      "body-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "code": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                      "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                      "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                      "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                      "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                      "code": ["13px", { "lineHeight": "16px", "fontWeight": "500" }],
+                      "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+              },
+              "boxShadow": {
+                  "ambient": "0px 2px 4px rgba(26, 82, 118, 0.05)"
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F7F9FB; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .blur-sm { filter: blur(4px); user-select: none; }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="max-w-[container-max] w-full mx-auto flex flex-col gap-8 items-center">
+<!-- Header -->
+<div class="text-center">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-2">How employers will first see you</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Review how your profile appears to potential employers before and after they request access.</p>
+</div>
+<!-- Cards Container -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-5xl">
+<!-- Left Card: Limited Access -->
+<div class="bg-surface-container-lowest rounded border border-surface-variant shadow-ambient border-l-4 border-l-amber-500 overflow-hidden flex flex-col">
+<div class="p-6 border-b border-surface-variant flex justify-between items-center bg-surface-bright">
+<div class="flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-800 rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                        Limited Access
+                    </div>
+<span class="font-code text-code text-outline">Ref: CND-2026-0148</span>
+</div>
+<div class="p-6 flex-1 flex flex-col gap-6">
+<div class="flex items-start gap-4">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-outline text-3xl">person</span>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary blur-sm">Hidden Name</span>
+<span class="material-symbols-outlined text-outline text-[16px]">lock</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Senior Software Engineer</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<p class="font-label-md text-label-md text-outline">EXPERIENCE</p>
+<p class="font-body-md text-body-md text-primary">8 Years</p>
+</div>
+<div class="space-y-1">
+<p class="font-label-md text-label-md text-outline">LOCATION</p>
+<p class="font-body-md text-body-md text-primary">Colombo</p>
+</div>
+<div class="space-y-1 col-span-2">
+<p class="font-label-md text-label-md text-outline">EXPECTED SALARY</p>
+<p class="font-body-md text-body-md text-primary">LKR 250k - 350k</p>
+</div>
+</div>
+<div class="space-y-3 mt-4 pt-4 border-t border-surface-variant">
+<p class="font-label-md text-label-md text-outline">CONTACT DETAILS</p>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">call</span>
+<span class="font-body-md text-body-md text-primary blur-sm">+94 77 123 4567</span>
+<span class="material-symbols-outlined text-outline text-[16px] ml-auto">lock</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">mail</span>
+<span class="font-body-md text-body-md text-primary blur-sm">hidden.email@example.com</span>
+<span class="material-symbols-outlined text-outline text-[16px] ml-auto">lock</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">location_on</span>
+<span class="font-body-md text-body-md text-primary blur-sm">123 Hidden Street, Colombo 03</span>
+<span class="material-symbols-outlined text-outline text-[16px] ml-auto">lock</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Card: Full Access -->
+<div class="bg-surface-container-lowest rounded border border-surface-variant shadow-ambient border-l-4 border-l-green-500 overflow-hidden flex flex-col">
+<div class="p-6 border-b border-surface-variant flex justify-between items-center bg-surface-bright">
+<div class="flex items-center gap-2 px-3 py-1 bg-green-100 text-green-800 rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">lock_open</span>
+                        Full Access
+                    </div>
+<span class="font-code text-code text-outline">Ref: CND-2026-0148</span>
+</div>
+<div class="p-6 flex-1 flex flex-col gap-6">
+<div class="flex items-start gap-4">
+<img alt="Kasun Perera" class="w-16 h-16 rounded-full object-cover border border-surface-variant flex-shrink-0" data-alt="A professional headshot of a smiling South Asian man in his 30s, wearing a smart casual navy blue shirt. The background is a bright, modern corporate office with soft, natural daylight highlighting his features. The image conveys approachability, confidence, and professionalism, adhering to a high-key, modern corporate visual aesthetic with clean lines and subtle cool tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHzt8YmeGpKBKeQNzZ4W_bi1l6EHEps7nQkSCCZtjtwe8Ho-7DEfdE-6nCLqjpl8KuffgLNDD8sadLbCNWRGPIi02cR0DtkFaXszpflXc5Of3GIr0BSlKccZMQLrSN7AKQoqsNmlAHM9UOVRO6U77oFe-p1YpCiqwAS0a02Fcsh-7fHij5XYp81PS2lLaGUN6Ki1Y6jvsQq3zZrqSDouZgTUIy4nC4HffZlHKyZROsysLKxs0cUaAl"/>
+<div class="flex-1 space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary">Kasun Perera</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Senior Software Engineer</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<p class="font-label-md text-label-md text-outline">EXPERIENCE</p>
+<p class="font-body-md text-body-md text-primary">8 Years</p>
+</div>
+<div class="space-y-1">
+<p class="font-label-md text-label-md text-outline">LOCATION</p>
+<p class="font-body-md text-body-md text-primary">Colombo</p>
+</div>
+<div class="space-y-1 col-span-2">
+<p class="font-label-md text-label-md text-outline">EXPECTED SALARY</p>
+<p class="font-body-md text-body-md text-primary">LKR 250k - 350k</p>
+</div>
+</div>
+<div class="space-y-3 mt-4 pt-4 border-t border-surface-variant">
+<p class="font-label-md text-label-md text-outline">CONTACT DETAILS</p>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">call</span>
+<span class="font-body-md text-body-md text-primary">+94 77 123 4567</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">mail</span>
+<span class="font-body-md text-body-md text-primary">kasun.perera@email.com</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">location_on</span>
+<span class="font-body-md text-body-md text-primary">45/2 Galle Road, Colombo 03</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / Action Area -->
+<div class="w-full max-w-2xl bg-surface-container-lowest p-6 rounded border border-surface-variant shadow-ambient mt-4 flex flex-col items-center gap-6">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary focus:ring-offset-0 bg-surface-bright cursor-pointer" id="consent-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">I consent to my data being shared in this format.</span>
+</label>
+<button class="px-6 py-3 bg-surface-variant text-outline rounded font-label-md text-label-md cursor-not-allowed transition-all w-full sm:w-auto min-w-[200px]" disabled="" id="submit-btn">
+                Submit for Review
+            </button>
+</div>
+</div>
+<script>
+        const checkbox = document.getElementById('consent-checkbox');
+        const submitBtn = document.getElementById('submit-btn');
+
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('bg-surface-variant', 'text-outline', 'cursor-not-allowed');
+                submitBtn.classList.add('bg-secondary', 'text-on-secondary', 'hover:bg-primary-container', 'shadow-sm');
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.classList.add('bg-surface-variant', 'text-outline', 'cursor-not-allowed');
+                submitBtn.classList.remove('bg-secondary', 'text-on-secondary', 'hover:bg-primary-container', 'shadow-sm');
+            }
+        });
+    </script>
+</body></html>

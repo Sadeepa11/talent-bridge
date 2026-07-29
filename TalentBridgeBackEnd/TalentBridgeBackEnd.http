@@ -1,0 +1,6 @@
+@TalentBridgeBackEnd_HostAddress = http://localhost:5159
+
+GET {{TalentBridgeBackEnd_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

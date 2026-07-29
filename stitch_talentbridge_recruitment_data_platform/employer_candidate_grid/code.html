@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Active Batch: Q3 Tech Talent</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#9bccf6",
+                        "on-tertiary-fixed-variant": "#005228",
+                        "surface-dim": "#d8dadc",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary-fixed-variant": "#0e4b6e",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#72787f",
+                        "tertiary-fixed-dim": "#61de8a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#00401e",
+                        "surface-container": "#eceef0",
+                        "primary-container": "#1a5276",
+                        "background": "#f7f9fb",
+                        "primary-fixed": "#cbe6ff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#cce5ff",
+                        "secondary": "#006397",
+                        "on-tertiary-container": "#58d683",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#2f6388",
+                        "on-secondary-container": "#004d77",
+                        "secondary-container": "#71c0fe",
+                        "inverse-primary": "#9bccf6",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#92ccff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001e30",
+                        "primary": "#003b5a",
+                        "surface-variant": "#e0e3e5",
+                        "surface-bright": "#f7f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-background": "#191c1e",
+                        "tertiary-container": "#005a2c",
+                        "on-surface-variant": "#41474e",
+                        "on-primary-container": "#94c5ee",
+                        "tertiary-fixed": "#7efba4",
+                        "on-secondary-fixed-variant": "#004b73",
+                        "outline-variant": "#c1c7cf",
+                        "on-secondary-fixed": "#001d31",
+                        "on-tertiary-fixed": "#00210c",
+                        "on-surface": "#191c1e",
+                        "surface": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sidebar_width": "260px",
+                        "container-max": "1440px",
+                        "topbar_height": "64px",
+                        "gutter": "24px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "code": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "code": ["13px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen flex overflow-hidden">
+<!-- SideNavBar -->
+<nav class="w-[260px] h-full fixed left-0 top-0 bg-primary flex flex-col z-20 border-r border-outline-variant">
+<div class="h-[64px] flex items-center px-4">
+<h1 class="font-headline-md text-headline-md font-bold text-surface-lowest">TalentBridge</h1>
+</div>
+<div class="px-4 py-2">
+<p class="font-label-md text-label-md text-primary-fixed-dim/70 uppercase tracking-wider">Recruitment Portal</p>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar mt-4">
+<ul class="flex flex-col gap-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim/70 hover:bg-primary-container/10 hover:text-surface-lowest transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim/70 hover:bg-primary-container/10 hover:text-surface-lowest transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+<span>Candidates</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-surface-lowest border-l-4 border-secondary-container bg-primary-container/20 font-label-md text-label-md opacity-90" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="folder_shared">folder_shared</span>
+<span>Batches</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim/70 hover:bg-primary-container/10 hover:text-surface-lowest transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="vpn_key">vpn_key</span>
+<span>Access Grants</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim/70 hover:bg-primary-container/10 hover:text-surface-lowest transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="analytics">analytics</span>
+<span>Reports</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim/70 hover:bg-primary-container/10 hover:text-surface-lowest transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 ml-sidebar_width flex flex-col h-screen">
+<!-- TopNavBar -->
+<header class="h-[64px] fixed top-0 right-0 w-[calc(100%-260px)] bg-surface-lowest flex justify-between items-center px-gutter border-b border-outline-variant shadow-sm z-10">
+<div class="flex items-center flex-1 max-w-md">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-bright border border-outline-variant rounded text-body-md font-body-md text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors" placeholder="Search candidates, batches..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 border-l border-outline-variant pl-4">
+<img alt="User Avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="Professional corporate headshot of a young professional in a light grey blazer, neutral studio lighting, light mode background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsJoRWVtkp7JW2nBhmZVEwTgXHCJxMW-gYV7fePOoyV1l2VhB7GZHRVRbDIUuvn27aDhbcaO3SOWGQZs_f07eFifAdM7OMamOdfOEPssgBi20qtVisJvy8Nj1aW4nnQdsjRIBX_8fFEEeR5w9uoGtD8tKGuEAbWtiP_hWdhWyNIjcyAYjpP4FSGdao0fe1F1T2Ir3nDHnhd2s6XtaZFmQbkN1JbjMlDYKwYxJtS20kYYrdGwprLuTq"/>
+<span class="font-label-md text-label-md text-primary">Alex Thompson</span>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<main class="flex-1 overflow-y-auto mt-[64px] p-gutter max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<a class="text-on-surface-variant hover:text-secondary font-body-sm text-body-sm flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                            Back to Batches
+                        </a>
+</div>
+<div class="flex items-center gap-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Active Batch: Q3 Tech Talent</h2>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200">
+<span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-1.5"></span>
+                            6 days remaining
+                        </span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mt-1">Select candidates to unlock full profile access using your monthly tokens.</p>
+</div>
+<div class="flex gap-3">
+<button class="h-10 px-4 rounded border border-outline-variant text-primary font-label-md text-label-md hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+<button class="h-10 px-4 rounded bg-secondary text-on-secondary font-label-md text-label-md hover:bg-surface-tint transition-colors shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">vpn_key</span>
+                        Unlock Selected (0)
+                    </button>
+</div>
+</div>
+<!-- Bento Grid of Candidates -->
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Limited Card 1 -->
+<div class="bg-surface-lowest border-y border-r border-outline-variant border-l-[4px] border-l-amber-500 rounded shadow-[0px_2px_4px_rgba(26,82,118,0.05)] hover:shadow-md transition-shadow flex flex-col h-full relative overflow-hidden group">
+<div class="p-4 border-b border-outline-variant bg-surface-bright flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-outline text-[24px]">person</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">DevOps Engineer</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-code text-code text-on-surface-variant">CND-2026-001</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+<span class="material-symbols-outlined text-[12px] mr-1">lock</span>
+                                        Limited
+                                    </span>
+</div>
+</div>
+</div>
+<input class="w-5 h-5 rounded border-outline-variant text-secondary focus:ring-secondary mt-1 cursor-pointer" type="checkbox"/>
+</div>
+<div class="p-4 flex-1 flex flex-col gap-4">
+<div class="grid grid-cols-2 gap-y-3 gap-x-4">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Experience</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">8 Years</p>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Location</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">Remote (PST)</p>
+</div>
+<div class="col-span-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Expected Salary</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">$140k - $160k</p>
+</div>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Top Skills</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">Kubernetes</span>
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">AWS</span>
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">Terraform</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Limited Card 2 -->
+<div class="bg-surface-lowest border-y border-r border-outline-variant border-l-[4px] border-l-amber-500 rounded shadow-[0px_2px_4px_rgba(26,82,118,0.05)] hover:shadow-md transition-shadow flex flex-col h-full relative overflow-hidden group">
+<div class="p-4 border-b border-outline-variant bg-surface-bright flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-outline text-[24px]">person</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Senior Frontend</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-code text-code text-on-surface-variant">CND-2026-002</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+<span class="material-symbols-outlined text-[12px] mr-1">lock</span>
+                                        Limited
+                                    </span>
+</div>
+</div>
+</div>
+<input class="w-5 h-5 rounded border-outline-variant text-secondary focus:ring-secondary mt-1 cursor-pointer" type="checkbox"/>
+</div>
+<div class="p-4 flex-1 flex flex-col gap-4">
+<div class="grid grid-cols-2 gap-y-3 gap-x-4">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Experience</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">5 Years</p>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Location</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">New York, NY</p>
+</div>
+<div class="col-span-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Expected Salary</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">$120k - $135k</p>
+</div>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Top Skills</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">React</span>
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">TypeScript</span>
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">Tailwind</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Full Access Card 1 -->
+<div class="bg-surface-lowest border-y border-r border-outline-variant border-l-[4px] border-l-emerald-500 rounded shadow-[0px_2px_4px_rgba(26,82,118,0.05)] hover:shadow-md transition-shadow flex flex-col h-full relative overflow-hidden group">
+<div class="p-4 border-b border-outline-variant bg-surface-lowest flex justify-between items-start">
+<div class="flex items-center gap-3">
+<img alt="Candidate Photo" class="w-12 h-12 rounded-full object-cover border border-outline-variant" data-alt="Professional corporate headshot of a middle-aged professional woman with glasses, light grey background, soft studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWkCz5v7uGu_plpVyr55zdAbHr8Cg17nJposafiIK7Ie6RI0w6CDsOokXtDwFlDbRc7RJRNxshApiPsgYJOTTx5Sr8uFojr4C3iO2n8TEfbmyakrEGW3lKIGzecmpEa-YusMH32rw9DxbsHWof5O3eYMUDq8rwHcfkiPJjqRXx1Fo9zrOXSHkBdGaeh1m09pnZbqiE1csdv59h9ab-3xtJ9nvSNTPTE6Y4qeL2UNRCSvD6RQXY1Vv2"/>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Sarah Jenkins</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-body-sm text-body-sm text-on-surface-variant">QA Lead</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="material-symbols-outlined text-[12px] mr-1">lock_open</span>
+                                        Full Access
+                                    </span>
+</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-secondary p-1">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="p-4 flex-1 flex flex-col gap-4">
+<div class="grid grid-cols-2 gap-y-3 gap-x-4">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Experience</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">10 Years</p>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Location</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">Austin, TX</p>
+</div>
+<div class="col-span-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Availability</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">2 Weeks Notice</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant border-dashed">
+<button class="w-full h-8 flex items-center justify-center gap-2 text-secondary font-label-md text-label-md hover:bg-surface-container-low rounded transition-colors">
+                                View Full Profile
+                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Limited Card 3 -->
+<div class="bg-surface-lowest border-y border-r border-outline-variant border-l-[4px] border-l-amber-500 rounded shadow-[0px_2px_4px_rgba(26,82,118,0.05)] hover:shadow-md transition-shadow flex flex-col h-full relative overflow-hidden group">
+<div class="p-4 border-b border-outline-variant bg-surface-bright flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-outline text-[24px]">person</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Backend Engineer</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-code text-code text-on-surface-variant">CND-2026-044</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+<span class="material-symbols-outlined text-[12px] mr-1">lock</span>
+                                        Limited
+                                    </span>
+</div>
+</div>
+</div>
+<input class="w-5 h-5 rounded border-outline-variant text-secondary focus:ring-secondary mt-1 cursor-pointer" type="checkbox"/>
+</div>
+<div class="p-4 flex-1 flex flex-col gap-4">
+<div class="grid grid-cols-2 gap-y-3 gap-x-4">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Experience</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">3 Years</p>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Location</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">Remote (EST)</p>
+</div>
+<div class="col-span-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Expected Salary</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">$100k - $115k</p>
+</div>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Top Skills</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">Python</span>
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">Django</span>
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">PostgreSQL</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Limited Card 4 -->
+<div class="bg-surface-lowest border-y border-r border-outline-variant border-l-[4px] border-l-amber-500 rounded shadow-[0px_2px_4px_rgba(26,82,118,0.05)] hover:shadow-md transition-shadow flex flex-col h-full relative overflow-hidden group">
+<div class="p-4 border-b border-outline-variant bg-surface-bright flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-outline text-[24px]">person</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Fullstack Dev</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-code text-code text-on-surface-variant">CND-2026-052</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+<span class="material-symbols-outlined text-[12px] mr-1">lock</span>
+                                        Limited
+                                    </span>
+</div>
+</div>
+</div>
+<input class="w-5 h-5 rounded border-outline-variant text-secondary focus:ring-secondary mt-1 cursor-pointer" type="checkbox"/>
+</div>
+<div class="p-4 flex-1 flex flex-col gap-4">
+<div class="grid grid-cols-2 gap-y-3 gap-x-4">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Experience</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">6 Years</p>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Location</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">Chicago, IL</p>
+</div>
+<div class="col-span-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Expected Salary</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">$130k - $145k</p>
+</div>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Top Skills</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">Node.js</span>
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">React</span>
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">MongoDB</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Full Access Card 2 -->
+<div class="bg-surface-lowest border-y border-r border-outline-variant border-l-[4px] border-l-emerald-500 rounded shadow-[0px_2px_4px_rgba(26,82,118,0.05)] hover:shadow-md transition-shadow flex flex-col h-full relative overflow-hidden group">
+<div class="p-4 border-b border-outline-variant bg-surface-lowest flex justify-between items-start">
+<div class="flex items-center gap-3">
+<img alt="Candidate Photo" class="w-12 h-12 rounded-full object-cover border border-outline-variant" data-alt="Professional corporate headshot of an Asian male professional, clean background, sharp focus, light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACzCT-MfvfomPEf2hvU3mGM4-W8vUhVEV1e10t_5r9fzLupWxvExNAYCxOl6MJidQIM9yK9AVhZGoqH1OnNjLg1Z_d8h9iMwd-qDXAcR6-Ci4cssT3EkeifoD9_3ypxu9zxq89gnNXpiRJICjMJ5Wjjmx6IVEV4zLr5Mvrat17oAUHnGEpa_Swqy1oKbFC1uFboZ-J2hPxrHEpc5FMhkdd1JtGvElUn4w1s_kPoxI1x84UTaAQ0ZgF"/>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">David Chen</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cloud Architect</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="material-symbols-outlined text-[12px] mr-1">lock_open</span>
+                                        Full Access
+                                    </span>
+</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-secondary p-1">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="p-4 flex-1 flex flex-col gap-4">
+<div class="grid grid-cols-2 gap-y-3 gap-x-4">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Experience</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">12 Years</p>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Location</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">Seattle, WA</p>
+</div>
+<div class="col-span-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Availability</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">Immediate</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant border-dashed">
+<button class="w-full h-8 flex items-center justify-center gap-2 text-secondary font-label-md text-label-md hover:bg-surface-container-low rounded transition-colors">
+                                View Full Profile
+                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Limited Card 5 -->
+<div class="bg-surface-lowest border-y border-r border-outline-variant border-l-[4px] border-l-amber-500 rounded shadow-[0px_2px_4px_rgba(26,82,118,0.05)] hover:shadow-md transition-shadow flex flex-col h-full relative overflow-hidden group">
+<div class="p-4 border-b border-outline-variant bg-surface-bright flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-outline text-[24px]">person</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Data Engineer</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-code text-code text-on-surface-variant">CND-2026-088</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+<span class="material-symbols-outlined text-[12px] mr-1">lock</span>
+                                        Limited
+                                    </span>
+</div>
+</div>
+</div>
+<input class="w-5 h-5 rounded border-outline-variant text-secondary focus:ring-secondary mt-1 cursor-pointer" type="checkbox"/>
+</div>
+<div class="p-4 flex-1 flex flex-col gap-4">
+<div class="grid grid-cols-2 gap-y-3 gap-x-4">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Experience</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">4 Years</p>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Location</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">Remote (CST)</p>
+</div>
+<div class="col-span-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Expected Salary</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">$115k - $125k</p>
+</div>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Top Skills</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">Snowflake</span>
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">Python</span>
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">dbt</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Limited Card 6 -->
+<div class="bg-surface-lowest border-y border-r border-outline-variant border-l-[4px] border-l-amber-500 rounded shadow-[0px_2px_4px_rgba(26,82,118,0.05)] hover:shadow-md transition-shadow flex flex-col h-full relative overflow-hidden group">
+<div class="p-4 border-b border-outline-variant bg-surface-bright flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-outline text-[24px]">person</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Security Analyst</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-code text-code text-on-surface-variant">CND-2026-102</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+<span class="material-symbols-outlined text-[12px] mr-1">lock</span>
+                                        Limited
+                                    </span>
+</div>
+</div>
+</div>
+<input class="w-5 h-5 rounded border-outline-variant text-secondary focus:ring-secondary mt-1 cursor-pointer" type="checkbox"/>
+</div>
+<div class="p-4 flex-1 flex flex-col gap-4">
+<div class="grid grid-cols-2 gap-y-3 gap-x-4">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Experience</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">7 Years</p>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Location</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">Washington, DC</p>
+</div>
+<div class="col-span-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Expected Salary</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">$125k - $140k</p>
+</div>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Top Skills</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">CISSP</span>
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">Splunk</span>
+<span class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface">Pen Testing</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Full Access Card 3 -->
+<div class="bg-surface-lowest border-y border-r border-outline-variant border-l-[4px] border-l-emerald-500 rounded shadow-[0px_2px_4px_rgba(26,82,118,0.05)] hover:shadow-md transition-shadow flex flex-col h-full relative overflow-hidden group">
+<div class="p-4 border-b border-outline-variant bg-surface-lowest flex justify-between items-start">
+<div class="flex items-center gap-3">
+<img alt="Candidate Photo" class="w-12 h-12 rounded-full object-cover border border-outline-variant" data-alt="Professional corporate headshot of a young woman of color, clean corporate office background, soft daylight, light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0CX2FNh_W6Fp-uOA5JjjfRfQG1Vd2URtL6c9-vjzQB5Z7b9-gB9yGRusCd43vSx7JERW6dt5_IRu6keggtupkJ16uMOVtJkFz4-RhLUDW6he5EHKikTK8Wq16KsMEvP_DyC4MhYvXMokQig5HC529Bnysy7XEzw3GtRj0vXSu5AofjaZ3NT_RyBdV0Id9UrI0uBdHL93st1j9Yrws5bnJKoauA_ZHbHQGEYWJZUinq0UhoUHJip5e"/>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Maya Patel</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Product Manager</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="material-symbols-outlined text-[12px] mr-1">lock_open</span>
+                                        Full Access
+                                    </span>
+</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-secondary p-1">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="p-4 flex-1 flex flex-col gap-4">
+<div class="grid grid-cols-2 gap-y-3 gap-x-4">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Experience</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">6 Years</p>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Location</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">San Francisco, CA</p>
+</div>
+<div class="col-span-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0.5">Availability</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">1 Month Notice</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant border-dashed">
+<button class="w-full h-8 flex items-center justify-center gap-2 text-secondary font-label-md text-label-md hover:bg-surface-container-low rounded transition-colors">
+                                View Full Profile
+                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-center pb-8">
+<button class="h-10 px-6 rounded border border-outline-variant bg-surface-lowest text-primary font-label-md text-label-md hover:bg-surface-container-low transition-colors shadow-sm">
+                    Load More Candidates
+                </button>
+</div>
+</main>
+</div>
+</body></html>

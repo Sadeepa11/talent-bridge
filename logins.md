@@ -1,0 +1,4 @@
+  • SuperAdmin:  admin@talentbridge.com  (Password:  Admin.123 )                                                                                                            
+  • OpsAdmin:  ops@talentbridge.com  (Password:  Ops.123 )                                                                                                                  
+  • Company:  company@test.com  (Password:  Company.123  - TechNova Solutions Ltd)                                                                                          
+  • Candidate:  candidate@talentbridge.com  (Password:  Candidate.123  - Ref:  CND-2026-0001  Profile + PII + Experience + Qualification)    
